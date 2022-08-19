@@ -57,10 +57,10 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
-
                     })//마지막 jwt 토큰 값
                 }
             }
+
         }
     }
 }
