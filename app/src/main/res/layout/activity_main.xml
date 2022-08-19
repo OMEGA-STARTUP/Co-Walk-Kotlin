@@ -7,12 +7,168 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/loginBanner"
+        android:layout_width="109dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginBottom="36dp"
+        android:text="Log in \n 로그인"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textidblue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/textId"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="39dp"
+        android:ems="10"
+        android:hint="사용할 아이디를 입력해주세요."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textidblue" />
+
+    <CheckBox
+        android:id="@+id/radioAutoLog"
+        android:layout_width="232dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="52dp"
+        android:checked="false"
+        android:text="  로그인 상태 유지하기"
+        android:onClick="autoLoginRadio"
+        app:layout_constraintBottom_toTopOf="@+id/btngoRegister"
+        app:layout_constraintEnd_toEndOf="@+id/textPw"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textPw"
+        app:layout_constraintTop_toBottomOf="@+id/textPw" />
+
+    <EditText
+        android:id="@+id/textPw"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="39dp"
+        android:ems="10"
+        android:hint="사용할 비밀번호를 입력해주세요."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textId" />
+
+    <TextView
+        android:id="@+id/textidblue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="8dp"
+        android:text="아이디"
+        android:textColor="#7972fd"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textId"
+        app:layout_constraintStart_toStartOf="@+id/textId" />
+
+    <TextView
+        android:id="@+id/textpwblue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="8dp"
+        android:text="비밀번호"
+        android:textColor="#7972fd"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textPw"
+        app:layout_constraintStart_toStartOf="@+id/textPw" />
+
+    <TextView
+        android:id="@+id/btngoRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="회원가입이 필요하신가요?"
+        android:textColor="#606060"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/radioAutoLog"
+        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintStart_toStartOf="@+id/radioAutoLog"
+        app:layout_constraintTop_toBottomOf="@+id/radioAutoLog" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="314dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btnrosquebase"
+        android:text="로그인하기"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logpage툴바" />
+
+    <TextView
+        android:id="@+id/btnFindIdPw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디 | 비밀번호 찾기"
+        android:textColor="#ACAFFE"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/radioAutoLog"
+        app:layout_constraintEnd_toEndOf="@+id/radioAutoLog"
+        app:layout_constraintStart_toEndOf="@+id/radioAutoLog"
+        app:layout_constraintTop_toBottomOf="@+id/textPw"
+        app:layout_constraintVertical_bias="0.586" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/btngoRegister"
+        app:layout_constraintEnd_toEndOf="@+id/btngoRegister"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btngoRegister"
+        app:layout_constraintTop_toBottomOf="@+id/radioAutoLog"
+        app:layout_constraintVertical_bias="0.707"
+        app:srcCompat="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/logpage툴바"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="597dp"
+        android:gravity="center|top"
+        android:text="로그인"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Backbuttontoolbar"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/loginBanner"
+        app:layout_constraintEnd_toStartOf="@+id/logpage툴바"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242"
+        app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
