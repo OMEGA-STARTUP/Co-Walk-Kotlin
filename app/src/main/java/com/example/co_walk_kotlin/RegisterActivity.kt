@@ -16,22 +16,20 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding= ActivityRegisterBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //메일 인증하기
         binding.editemail.setOnClickListener {
-
         }
 
 
-
         //임시 토큰값 설정
-        lateinit var jwt :JwtTokenEmail
+        lateinit var jwt: JwtTokenEmail
         //비밀번호 같은지 학인 후 회원가입 처리
-        with(binding){
+        with(binding) {
             btnRegister.setOnClickListener {
-                if(editpwr == editpwr2) {
+                if (editpwr == editpwr2) {
                     Client.retrofitService.register(
                         textidr.text.toString(),
                         editpwr2.text.toString(), editemail.text.toString(),
@@ -57,18 +55,9 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
-<<<<<<< HEAD
                     })//마지막 jwt 토큰 값
                 }
             }
-
-
-=======
-
-                    })//마지막 jwt 토큰 값
-                }
-            }
->>>>>>> c386acd0b77224aec8d4b4081b05455d1ed8343a
         }
     }
 }
