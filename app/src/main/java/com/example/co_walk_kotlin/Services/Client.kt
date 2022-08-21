@@ -1,5 +1,6 @@
 package com.example.co_walk_kotlin.Services
 
+import android.content.Context
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,6 +18,9 @@ object Client {
             .writeTimeout(20, TimeUnit.SECONDS)
             .build()
 
+            //토큰 인터셉터 생성
+
+
             //레트로핏 생성
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://") //베이스 서버 주소
@@ -24,7 +28,7 @@ object Client {
                 .build()
 
             val service = retrofit.create(API::class.java)
-
     }
-    //로그인
+
+
 }

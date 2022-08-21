@@ -6,19 +6,26 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.co_walk_kotlin.Data.ResUser
 import com.example.co_walk_kotlin.Data.UserReq
+import com.example.co_walk_kotlin.Services.API
 import com.example.co_walk_kotlin.Services.Client
 import com.example.co_walk_kotlin.databinding.ActivityMainBinding
+import com.example.co_walk_kotlin.utils.SessionManager
 import retrofit2.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    private lateinit var sessionManger: SessionManager
+
     var autologcheck = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
 
         //-----------버튼들 처리---------
@@ -34,17 +41,20 @@ class MainActivity : AppCompatActivity() {
 
         with(binding){
             btnLogin.setOnClickListener {
-                Client.retrofitService.login(textId.text.toString(),textPw.text.toString()).enqueue(object :Callback<UserReq>
+                Client.retrofitService.login(UserReq(identifier = textId.text.toString(),
+                                              password = textPw.text.toString())).enqueue(object :Callback<ResUser>
                 {
-                    override fun onResponse(call: Call<UserReq>, response: Response<UserReq>) {
-                        if(response.code()==200) {
-                            Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
-                        }
-                        else {Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()}
+                    override fun onResponse(call: Call<ResUser>, response: Response<ResUser>) {
+                        val loginResponse = response.body()
 
+                        if (loginResponse?.code == 200 ) {
+                            sessionManger.saveAuthToken(loginResponse.access_token)
+                        } else {
+                            Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                        }
                     }
 
-                    override fun onFailure(call: Call<UserReq>, t: Throwable) {
+                    override fun onFailure(call: Call<ResUser>, t: Throwable) {
                         Toast.makeText(this@MainActivity, "로그인 실패 : " + t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
 
