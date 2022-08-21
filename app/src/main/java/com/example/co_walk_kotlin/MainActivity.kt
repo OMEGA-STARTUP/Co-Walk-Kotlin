@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
                         if (loginResponse?.code == 200 ) {
                             sessionManger.saveAuthToken(loginResponse.access_token)
+                            sessionManger.saveAuthToken(loginResponse.refresh_token)
                         } else {
                             Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
                         }

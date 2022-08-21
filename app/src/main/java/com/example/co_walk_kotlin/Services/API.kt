@@ -5,10 +5,7 @@ import com.example.co_walk_kotlin.Data.ResUser
 import com.example.co_walk_kotlin.Data.UserReq
 import com.example.co_walk_kotlin.Data.register
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface API {
     @POST("/user/login")
@@ -22,4 +19,6 @@ interface API {
                  @Field("email") email:String, @Field("nickname") nickname:String,
                  @Field("jwt_token") jwtTokenEmail : JwtTokenEmail
     ) : Call<register>
+
+
 }
