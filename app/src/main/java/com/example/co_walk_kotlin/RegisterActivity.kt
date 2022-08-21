@@ -57,11 +57,18 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
+<<<<<<< HEAD
                     })//마지막 jwt 토큰 값
                 }
             }
 
 
+=======
+
+                    })//마지막 jwt 토큰 값
+                }
+            }
+>>>>>>> c386acd0b77224aec8d4b4081b05455d1ed8343a
         }
     }
 }

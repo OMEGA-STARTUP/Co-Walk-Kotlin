@@ -6,18 +6,27 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+<<<<<<< HEAD
 import com.example.co_walk_kotlin.Data.ResUser
 import com.example.co_walk_kotlin.Data.UserReq
 import com.example.co_walk_kotlin.Services.API
 import com.example.co_walk_kotlin.Services.Client
 import com.example.co_walk_kotlin.databinding.ActivityMainBinding
 import com.example.co_walk_kotlin.utils.SessionManager
+=======
+import com.example.co_walk_kotlin.Data.UserReq
+import com.example.co_walk_kotlin.Services.Client
+import com.example.co_walk_kotlin.databinding.ActivityMainBinding
+>>>>>>> c386acd0b77224aec8d4b4081b05455d1ed8343a
 import retrofit2.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+<<<<<<< HEAD
     private lateinit var sessionManger: SessionManager
 
+=======
+>>>>>>> c386acd0b77224aec8d4b4081b05455d1ed8343a
     var autologcheck = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +35,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c386acd0b77224aec8d4b4081b05455d1ed8343a
         //-----------버튼들 처리---------
 
         //아이디 비밀번호 찾기 ui없음 미구현 -> 아이디비번 찾기 액티비티. Register액티비티 부분에 넣어줘야함
@@ -41,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         with(binding){
             btnLogin.setOnClickListener {
+<<<<<<< HEAD
                 Client.retrofitService.login(UserReq(identifier = textId.text.toString(),
                                               password = textPw.text.toString())).enqueue(object :Callback<ResUser>
                 {
@@ -56,6 +69,19 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<ResUser>, t: Throwable) {
+=======
+                Client.retrofitService.login(textId.text.toString(),textPw.text.toString()).enqueue(object :Callback<UserReq>
+                {
+                    override fun onResponse(call: Call<UserReq>, response: Response<UserReq>) {
+                        if(response.code()==200) {
+                            Toast.makeText(this@MainActivity, "로그인 성공", Toast.LENGTH_SHORT).show()
+                        }
+                        else {Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()}
+
+                    }
+
+                    override fun onFailure(call: Call<UserReq>, t: Throwable) {
+>>>>>>> c386acd0b77224aec8d4b4081b05455d1ed8343a
                         Toast.makeText(this@MainActivity, "로그인 실패 : " + t.message.toString(), Toast.LENGTH_SHORT).show()
                     }
 
