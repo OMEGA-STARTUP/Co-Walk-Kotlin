@@ -8,14 +8,22 @@ class SessionManager (context: Context) {
     private var prefs: SharedPreferences = context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
 
     companion object {
-        const val USER_TOKEN = "user_token"
+        const val USER_TOKEN = "access_token"
+        const val Refresh_Token = "refresh_token "
     }
 
-    fun saveAuthToken(token: String) {
+    fun saveAccessAuthToken(token: String) {
         val editor = prefs.edit()
         editor.putString(USER_TOKEN, token)
         editor.apply()
     }
+
+    fun saveRefreshToken (token: String) {
+        val editor = prefs.edit()
+        editor.putString(Refresh_Token, token)
+        editor.apply()
+    }
+
 
     fun fetchAuthToken(): String? {
         return prefs.getString(USER_TOKEN, null)

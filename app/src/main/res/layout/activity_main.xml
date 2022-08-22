@@ -30,15 +30,17 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="39dp"
+        android:cursorVisible="false"
         android:ems="10"
         android:hint="사용할 아이디를 입력해주세요."
         android:inputType="textPersonName"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textidblue" />
 
-    <CheckBox
+    <!--<CheckBox
         android:id="@+id/radioAutoLog"
         android:layout_width="232dp"
         android:layout_height="48dp"
@@ -52,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textPw"
         app:layout_constraintTop_toBottomOf="@+id/textPw" />
-
+-->
     <EditText
         android:id="@+id/textPw"
         android:layout_width="0dp"
@@ -60,6 +62,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="39dp"
+        android:cursorVisible="false"
         android:ems="10"
         android:hint="사용할 비밀번호를 입력해주세요."
         android:inputType="textPersonName"
@@ -96,14 +99,15 @@
         android:id="@+id/btngoRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="12dp"
         android:text="회원가입이 필요하신가요?"
         android:textColor="#606060"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/radioAutoLog"
-        app:layout_constraintHorizontal_bias="0.035"
-        app:layout_constraintStart_toStartOf="@+id/radioAutoLog"
-        app:layout_constraintTop_toBottomOf="@+id/radioAutoLog" />
+        app:layout_constraintEnd_toEndOf="@+id/textPw"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPw" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -126,11 +130,12 @@
         android:text="아이디 | 비밀번호 찾기"
         android:textColor="#ACAFFE"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/radioAutoLog"
-        app:layout_constraintEnd_toEndOf="@+id/radioAutoLog"
-        app:layout_constraintStart_toEndOf="@+id/radioAutoLog"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPw"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -156,6 +161,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

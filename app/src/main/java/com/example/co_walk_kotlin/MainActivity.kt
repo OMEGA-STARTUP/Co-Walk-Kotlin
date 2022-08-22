@@ -16,11 +16,10 @@ import retrofit2.*
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
-
-
     private lateinit var sessionManger: SessionManager
 
     var autologcheck = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,8 +36,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
-
         with(binding) {
             btnLogin.setOnClickListener {
 
@@ -53,33 +50,32 @@ class MainActivity : AppCompatActivity() {
                         val loginResponse = response.body()
 
                         if (loginResponse?.code == 200) {
-                            sessionManger.saveAuthToken(loginResponse.access_token)
-                            sessionManger.saveAuthToken(loginResponse.refresh_token)
+                            sessionManger.saveAccessAuthToken(loginResponse.access_token)
+                            sessionManger.saveRefreshToken(loginResponse.refresh_token)
                         } else {
-                            Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@MainActivity, "로그인 실패" , Toast.LENGTH_SHORT).show()
+                            Log.d("response : ",response?.body().toString())
                         }
                     }
 
                     override fun onFailure(call: Call<ResUser>, t: Throwable) {
                         Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                        Log.d("response : ",t?.toString())
                     }
                 })
             }
-
-
             //로그인에서 회원가입 창으로
-            binding.btngoRegister.setOnClickListener()
-            {
+            binding.btngoRegister.setOnClickListener() {
                 // Intent(this,RegisterActivity::class.java).run {
                 //   startActivity(this)}
                 startActivity(Intent(this@MainActivity, RegisterActivity::class.java))
             }
         }
-
     }
 
-    //자동로그인 구현
-    fun autoLoginRadio (view: View) {
+
+    //자동로그인 구현 삭제
+    /*fun autoLoginRadio (view: View) {
         with(binding) {
             autologcheck = radioAutoLog.isChecked()
             if(autologcheck) {
@@ -90,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("login", "${autologcheck}")
             }
         }
-    }
+    }*/
 }
 
 

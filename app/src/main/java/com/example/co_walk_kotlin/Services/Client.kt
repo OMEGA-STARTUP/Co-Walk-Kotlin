@@ -2,6 +2,7 @@ package com.example.co_walk_kotlin.Services
 
 
 import android.content.Context
+import com.example.co_walk_kotlin.utils.Paths.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object Client {
-    lateinit var retrofitService: API
+    var retrofitService: API
         //통신 상태 로그 작성
     init {
         val interceptor = HttpLoggingInterceptor()
@@ -23,11 +24,11 @@ object Client {
 
             //레트로핏 생성
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://") //베이스 서버 주소
+                .baseUrl(BASE_URL) //베이스 서버 주소
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-            val service = retrofit.create(API::class.java)
+            retrofitService = retrofit.create(API::class.java)
         }
 }
 
