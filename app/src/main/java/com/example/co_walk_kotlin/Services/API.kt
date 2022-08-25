@@ -12,7 +12,7 @@ import retrofit2.http.POST
 interface API {
 
     @POST(LOGIN_URL)
-    //fun login(@Field("identifier") id:String, @Field("password") password:String) : Call<UserReq>
+    //fun login(@Field("identifier") id:String, @Field("password") password:String) : Call<UserReqq>
     fun login(@Body req: UserReq) : Call<ResUser>
 
     @POST("/user/register")
