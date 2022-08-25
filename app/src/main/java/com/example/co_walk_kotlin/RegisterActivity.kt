@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.co_walk_kotlin.Data.JwtTokenEmail
 import com.example.co_walk_kotlin.Data.register
+import com.example.co_walk_kotlin.Data.registerREq
 import com.example.co_walk_kotlin.Services.Client
 import com.example.co_walk_kotlin.databinding.ActivityRegisterBinding
 import retrofit2.Call
@@ -31,9 +32,14 @@ class RegisterActivity : AppCompatActivity() {
             btnRegister.setOnClickListener {
                 if (editpwr == editpwr2) {
                     Client.retrofitService.register(
-                        textidr.text.toString(),
-                        editpwr2.text.toString(), editemail.text.toString(),
-                        editnickr.text.toString(), jwt
+                        registerREq (
+                            email = editemail.text.toString(),
+                            identifier = textidr.text.toString(),
+                            password = editpwr.text.toString(),
+                            nickname = editnickr.text.toString(),
+                            jwt_token = textId.text.toString(),
+
+                                )
                     ).enqueue(object : Callback<register> {
                         override fun onResponse(
                             call: Call<register>,

@@ -1,9 +1,6 @@
 package com.example.co_walk_kotlin.Services
 
-import com.example.co_walk_kotlin.Data.JwtTokenEmail
-import com.example.co_walk_kotlin.Data.ResUser
-import com.example.co_walk_kotlin.Data.UserReq
-import com.example.co_walk_kotlin.Data.register
+import com.example.co_walk_kotlin.Data.*
 import com.example.co_walk_kotlin.utils.Paths.LOGIN_URL
 import retrofit2.Call
 import retrofit2.http.*
@@ -20,8 +17,8 @@ interface API {
 
     @POST("/user/register")
     @FormUrlEncoded
-    fun register(@Field("identifier") id:String, @Field("password") password:String,
+    fun register(@Field("identifier") id: registerREq, @Field("password") password:String,
                  @Field("email") email:String, @Field("nickname") nickname:String,
-                 @Field("jwt_token") jwtTokenEmail : JwtTokenEmail
-    ) : Call<register>
+                 @Field("jwt_token") jwtTokenEmail: JwtTokenEmail
+    ) : Call<Resregister>
 }
