@@ -17,8 +17,9 @@ interface API {
 
     @POST("/user/register")
     @FormUrlEncoded
-    fun register(@Field("identifier") id: registerREq, @Field("password") password:String,
-                 @Field("email") email:String, @Field("nickname") nickname:String,
-                 @Field("jwt_token") jwtTokenEmail: JwtTokenEmail
+    fun register(//@Field("identifier") id: registerREq, @Field("password") password:String,
+                 //@Field("email") email:String, @Field("nickname") nickname:String,
+                 //@Field("jwt_token") jwtTokenEmail: JwtTokenEmail
+    @Body registerREq: registerREq
     ) : Call<Resregister>
 }
