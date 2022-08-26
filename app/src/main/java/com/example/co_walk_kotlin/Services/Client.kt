@@ -20,15 +20,15 @@ object Client {
             .writeTimeout(20, TimeUnit.SECONDS)
             .build()
 
-            //토큰 인터셉터 생성
-
             //레트로핏 생성
             val retrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL) //베이스 서버 주소
+                .client(logger)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
             retrofitService = retrofit.create(API::class.java)
+
         }
 }
 

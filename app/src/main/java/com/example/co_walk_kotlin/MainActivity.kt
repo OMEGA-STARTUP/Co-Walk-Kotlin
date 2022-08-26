@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var sessionManger: SessionManager
 
-    var autologcheck = false
+    //var autologcheck = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,13 +54,13 @@ class MainActivity : AppCompatActivity() {
                             sessionManger.saveRefreshToken(loginResponse.refresh_token)
                         } else {
                             Toast.makeText(this@MainActivity, "로그인 실패" , Toast.LENGTH_SHORT).show()
-                            Log.d("response : ",response?.body().toString())
+                           // Log.d("response : ",response?.body().toString())
                         }
                     }
 
                     override fun onFailure(call: Call<ResUser>, t: Throwable) {
                         Toast.makeText(this@MainActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
-                        Log.d("response : ",t?.toString())
+                       // Log.d("response : ",t?.toString())
                     }
                 })
             }

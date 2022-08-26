@@ -24,8 +24,4 @@ class SessionManager (context: Context) {
         editor.apply()
     }
 
-
-    fun fetchAuthToken(): String? {
-        return prefs.getString(USER_TOKEN, null)
-    }
 }
