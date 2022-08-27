@@ -171,10 +171,10 @@
         android:layout_height="38dp"
         app:layout_constraintBottom_toTopOf="@+id/loginBanner"
         app:layout_constraintEnd_toStartOf="@+id/logpage툴바"
-        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242"
+        app:layout_constraintVertical_bias="0.015"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

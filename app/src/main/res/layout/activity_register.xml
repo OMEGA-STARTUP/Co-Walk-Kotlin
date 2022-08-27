@@ -7,6 +7,18 @@
     tools:context=".RegisterActivity">
 
 
+    <ImageView
+        android:id="@+id/backbuttontoolbar2"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/loginBanner"
+        app:layout_constraintEnd_toStartOf="@+id/logpage툴바"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.015"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
     <TextView
         android:id="@+id/register툴바"
         android:layout_width="wrap_content"
@@ -23,17 +35,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.043" />
 
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="38dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/register툴바"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/homeAsUpIndicator" />
 
     <TextView
         android:id="@+id/textView3"
@@ -60,9 +61,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.934" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
 
