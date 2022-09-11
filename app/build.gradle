@@ -36,6 +36,10 @@ android {
 }
 
 dependencies {
+    //exoplayer 사용
+    implementation "com.google.android.exoplayer:exoplayer-core:2.14.1"
+    implementation "com.google.android.exoplayer:exoplayer-ui:2.14.1"
+    implementation "com.google.android.exoplayer:exoplayer-hls:2.14.1"
 
     //통신 체크
     implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0'
@@ -45,7 +49,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
 // annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0' // < 동작안함
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
-
+//원형 이미지뷰 라이브러리
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'

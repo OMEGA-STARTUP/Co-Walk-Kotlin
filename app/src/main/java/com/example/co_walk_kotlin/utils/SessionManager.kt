@@ -18,6 +18,10 @@ class SessionManager (context: Context) {
         editor.apply()
     }
 
+    fun getAccessAuthToken(token: String): String {
+        return USER_TOKEN
+    }
+
     fun saveRefreshToken (token: String) {
         val editor = prefs.edit()
         editor.putString(Refresh_Token, token)

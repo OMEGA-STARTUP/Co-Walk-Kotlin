@@ -4,10 +4,12 @@ import com.example.co_walk_kotlin.Data.*
 import com.example.co_walk_kotlin.utils.Paths.EMAIL_URL
 import com.example.co_walk_kotlin.utils.Paths.LOGIN_URL
 import com.example.co_walk_kotlin.utils.Paths.REGISTER_URL
+import com.example.co_walk_kotlin.utils.SessionManager.Companion.USER_TOKEN
 import okhttp3.Response
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -32,4 +34,11 @@ interface API {
         @Path("email") Email: String,
         @Body email: String
     ) : Call<JwtToken>
+
+
+    @GET("/background-sounds")
+    fun getlistMusics(): Call<LoadSounds>
+       // @Header("An authorization token") access_token: String    인터셉터 사용으로 헤더에 jwt access 토큰 자동 추가
 }
+
+

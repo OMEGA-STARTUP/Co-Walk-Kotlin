@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                             sessionManger.saveRefreshToken(loginResponse.refresh_token)
                         } else {
                             Toast.makeText(this@MainActivity, "로그인 실패" , Toast.LENGTH_SHORT).show()
-                           // Log.d("response : ",response?.body().toString())
+                           //Log.d("access token 값 : ",response?.body()!!.access_token)
                         }
                     }
 

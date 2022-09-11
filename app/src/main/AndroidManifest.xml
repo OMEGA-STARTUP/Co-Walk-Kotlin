@@ -3,6 +3,7 @@
     package="com.example.co_walk_kotlin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoWalkKotlin"
         android:usesCleartextTraffic="true">
-
-
+        <activity
+            android:name=".FindSoundPageActivity"
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
